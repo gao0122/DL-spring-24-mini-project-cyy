@@ -1,0 +1,7 @@
+Namespace(n=3, batch=128, dataset_dir='./dataset', params_path='ckpt/model_final.pth')
+Files already downloaded and verified
+Total number of parameters : 0.270 M
+model loaded from ckpt/model_final.pth
+accuracy: 80.81 %
+error: 19.19 %
+8081 / 10000

@@ -48,6 +48,7 @@ if __name__ == '__main__':
                 break
                 
     # test
+    print('testing...')
     total_n = 0
     total_correct = 0
     test_loss = 0
@@ -70,7 +71,7 @@ if __name__ == '__main__':
         test_losses.append(loss)
         
         txt = f'iter: {total_n: 4d}, loss: {loss} / {test_loss}'
-        print(txt)
+        # print(txt)
         with open(f'{opt.checkpoint_dir}/test_loss_log_{ts}.txt', 'a') as f:
             f.write(txt + '\n')
         with open(f'{opt.checkpoint_dir}/{fname}', 'a') as f:
@@ -78,12 +79,13 @@ if __name__ == '__main__':
             
     acc = 100 * total_correct / total_n
     err = 100 - acc
+    print('testing done')
     print(f'accuracy: {acc:.2f} %')
     print(f'error: {err:.2f} %')
     print(f'{total_correct} / {total_n}')
     
-    plot.plot_chart(opt.checkpoint_dir, fname, lname='Test Loss')
-    plot.plot_chart(opt.checkpoint_dir, 'loss_np', fname)
+    #plot.plot_chart(opt.checkpoint_dir, fname, lname='Test Loss')
+    #plot.plot_chart(opt.checkpoint_dir, 'loss_np', fname)
     
     
     # kaggle output
@@ -91,7 +93,7 @@ if __name__ == '__main__':
     dataloader = data.get_kaggle_dataloader(opt.batch, opt.dataset_dir)
     for batch in dataloader:
         pred_ys.append(model.pred(batch))
-        
+    
     # Open a new CSV file in write mode
     with open('yanbing_output_kaggle.csv', 'w', newline='') as file:
         writer = csv.writer(file)

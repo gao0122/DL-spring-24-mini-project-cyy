@@ -1,0 +1,11 @@
+Namespace(n=18, batch=128, dataset_dir='./dataset', params_path='ckpt/model_final.pth', is_kaggle=0)
+Total number of parameters : 1.732 M
+model loaded from ckpt/model_final.pth
+Files already downloaded and verified
+accuracy: 82.81 %
+error: 17.19 %
+8281 / 10000
+Namespace(n=18, batch=128, dataset_dir='./dataset', params_path='ckpt/model_final.pth', is_kaggle=1)
+Total number of parameters : 1.732 M
+model loaded from ckpt/model_final.pth
+kaggle done
